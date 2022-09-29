@@ -97,7 +97,7 @@ class DecodingOptions:
     max_initial_timestamp: Optional[float] = 0.0  # the initial timestamp cannot be later than this
 
     # implementation details
-    fp16: bool = True  # use fp16 for most of the calculation
+    fp16: bool = False  # use fp16 for most of the calculation
 
 
 @dataclass(frozen=True)
