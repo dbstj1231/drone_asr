@@ -3,8 +3,7 @@ import os
 import drone_asr as asr
 
 
-# DRONE_WAV_PATH = "/home/speechlab/drone_asr/speech.wav"
-DRONE_WAV_PATH = "/home/yoonseo/drone_asr/speech.wav"
+DRONE_WAV_PATH = os.getcwd() + "/speech.wav"
 
 
 if __name__ =="__main__":
