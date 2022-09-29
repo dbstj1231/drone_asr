@@ -92,11 +92,14 @@ python3 run.py
 
 ## Implementation issue
 
+실제로 사용할 때는 run.py의 코드를 참고하시길 바랍니다. 
+
+
 음성 인터페이스 코드에 적용시 Drone_ASR이라는 Class가 정의되어있습니다.  
 
 객체를 생성하면서 모델을 로드하는데 길지는 않지만 일정시간이 소요되기 때문에 우선적으로 클래스 객체를 정의해주시길 바랍니다. 
 
-즉 다음과 같이 drone_asr.py를 import하고 class 객체를 먼저 선언해주시길 바랍니다. 
+즉 다음과 같이 drone_asr.py를 import하고 class 객체를 우선적으로 선언해주시길 바랍니다. 
 
 ```python
 import drone_asr as asr
