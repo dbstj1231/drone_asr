@@ -37,7 +37,7 @@ sudo apt update && sudo apt install ffmpeg
 sudo apt install git-all
 git clone https://github.com/dbstj1231/drone_asr.git
 cd drone_asr
-git install .
+pip install .
 ```
 
 
