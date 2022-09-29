@@ -23,17 +23,9 @@
 테스트 실행 시 Python은 3.10 이였는데, Python은 3.7이상이면 실행 가능할 것으로 보입니다.  
 
 ```bash
-# on Linux
-# Install CUDA driver
-sudo ubuntu-drivers autoinstall
-sudo reboot
-
-# Install requirements
-sudo apt update && sudo apt install ffmpeg
-
-# download whisper repository
-sudo apt install git-all
-pip install git+https://github.com/openai/whisper.git
+git clone https://github.com/dbstj1231/drone_asr.git
+cd drone_asr
+git install .
 ```
 
 
