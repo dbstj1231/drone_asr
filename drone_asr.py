@@ -3,11 +3,8 @@ import os
 import string
 import time
 
-# DRONE_TEXT_PATH = "/home/speechlab/drone_asr/drone_text_v2"
-# DRONE_REPLACE_PATH = "/home/speechlab/drone_asr/drone_replace"
-DRONE_TEXT_PATH = "/home/yoonseo/drone_asr/drone_text_v2"
-DRONE_REPLACE_PATH = "/home/yoonseo/drone_asr/drone_replace"
-
+DRONE_TEXT_PATH = os.getcwd() + "/drone_text_v2"
+DRONE_REPLACE_PATH = os.getcwd() + "/drone_replace"
 
 import whisper
 # plz, change --fp16 True to False in decoding.py(whisper repos) when CUBLAS error occur 
@@ -26,11 +23,6 @@ class Drone_ASR():
             for s in f.readlines():
                 str = s.strip().replace("_"," ").split(":")
                 self.replacing_words[str[0]] = str[1]
-
-
-
-        #print(self.sentence_list)
-        #print(self.replacing_words)
 
     def digit2str(self, str):
         digit_flag = 0
