@@ -1,6 +1,6 @@
 # Drone ASR
 
-저희가 만든 무인이동체 음성인식기는 OpenAI의 Whisper 모델을 기반으로 post-processing을 진행하여 만든 음성인식기 입니다. 
+무인이동체 음성인식기는 OpenAI의 Whisper 모델을 기반으로 post-processing을 진행하여 만든 음성인식기 입니다. 
 
 
 
