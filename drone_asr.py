@@ -2,9 +2,12 @@ import glob
 import os
 import string
 import time
-DRONE_TEXT_PATH = "/home/speechlab/drone_text_v2"
-DRONE_WAV_PATH = "/home/speechlab/speech.wav"
-DRONE_REPLACE_PATH = "/home/speechlab/drone_replace"
+
+# DRONE_TEXT_PATH = "/home/speechlab/drone_asr/drone_text_v2"
+# DRONE_REPLACE_PATH = "/home/speechlab/drone_asr/drone_replace"
+DRONE_TEXT_PATH = "/home/yoonseo/drone_asr/drone_text_v2"
+DRONE_REPLACE_PATH = "/home/yoonseo/drone_asr/drone_replace"
+
 
 import whisper
 # plz, change --fp16 True to False in decoding.py(whisper repos) when CUBLAS error occur 
@@ -76,6 +79,7 @@ class Drone_ASR():
     def drone_transcribe(self, file_list_wav):
         #starting time
         start = time.time()
+        valid_flag = False
 
         # load audio and pad/trim it to fit 30 seconds
         #print(os.path.basename(f))
@@ -99,38 +103,11 @@ class Drone_ASR():
         text = self.digit2str(text)
         text = self.postprocessing(text)
 
-        # print the recognized text
-        #print(text)
-        #print()
-
         # print the runtime
         print("Runtime :", time.time() - start)
 
-        return text
-            
+        if self.check_valid_cmd(text):
+            valid_flag = True
 
-if __name__ =="__main__":
-
-    #initializeing
-    print("Model initializing...")
-    ASR = Drone_ASR()
-    print("Model loaded completed.")
-    
-
-    while True:
-        key = input()
-        if key == 'S' or key == 's':
-            print("Recording...")
-            os.system("arecord -t wav -c 1 -D plughw:2,0 -f S16_LE -d 6 -r 16000 " + DRONE_WAV_PATH)
-            print("Recording finished.")
-    
-            file_list_wav = [DRONE_WAV_PATH]
-            result = ASR.drone_transcribe(file_list_wav)
-            
-            if ASR.check_valid_cmd(result):
-                print("True")
-            else:
-                print("False")
-            print(result)
-        else :
-            break
+        return [valid_flag, text]
+       
