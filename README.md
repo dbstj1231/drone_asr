@@ -22,7 +22,7 @@
 
 ## Setup
 
-테스트 실행 시 Python은 3.10 이였는데, Python은 3.7이상이면 실행 가능할 것으로 보입니다.  
+테스트 실행 시 환경은 Ubuntu 20.04 Python은 3.10 입니다. Python은 3.7이상이면 실행 가능할 것으로 보입니다.  
 
 ```bash
 # on Linux
