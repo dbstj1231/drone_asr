@@ -1,6 +1,9 @@
 uab:uav
 ugb:ugv
 usb:usv
+uap:uav
+ugp:ugv
+usp:usv
 u a v:uav
 u g v:ugv
 u s v:usv
@@ -18,5 +21,8 @@ _for_:_four_
 _to_:_two_
 _the sarm_:_disarm_
 _this arm_:_disarm_
-_executed_:_execute          
+_executed:_execute
+_execut:_execute
+_acsecute:_execute
 _rapt_:_left_
+_unload_:_upload_
