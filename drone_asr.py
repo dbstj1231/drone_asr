@@ -3,8 +3,8 @@ import os
 import string
 import time
 
-DRONE_TEXT_PATH = os.getcwd() + "/drone_text_v2"
-DRONE_REPLACE_PATH = os.getcwd() + "/drone_replace"
+DRONE_TEXT_PATH = os.getcwd() + "/drone_asr/drone_text_v2"
+DRONE_REPLACE_PATH = os.getcwd() + "/drone_asr/drone_replace"
 
 import whisper
 # plz, change --fp16 True to False in decoding.py(whisper repos) when CUBLAS error occur 
